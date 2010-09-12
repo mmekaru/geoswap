@@ -1,5 +1,6 @@
 Geoswap::Application.routes.draw do
 
+root :to => 'locations#near_by'
 match '/rpx/callback', :via => :post
 match '/my/recent_check_ins', :via=> :get
 

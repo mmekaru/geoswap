@@ -1,0 +1,7 @@
+<h1>It's a new check in!</h1>
+
+<%= form_for @check_in, :url => location_check_ins_path(@check_in.location) do |f|%>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <%= f.submit 'GO!' %>
+<% end %>
