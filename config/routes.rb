@@ -1,4 +1,23 @@
 Geoswap::Application.routes.draw do
+
+match '/rpx/callback', :via => :post
+match '/my/recent_check_ins', :via=> :get
+
+resources :users do
+  member do
+    get 'recent_check_ins'
+  end
+end
+    
+resources :locations do
+  resources :check_ins
+  
+  collection do
+    get 'near_by'
+  end
+end
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
